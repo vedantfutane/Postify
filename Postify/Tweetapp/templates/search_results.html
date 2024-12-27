@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+
+{% block title %}Search Results{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1 class="text-center">Search Results for "<span class="text-primary">{{ query }}</span>"</h1>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4 mt-4">
+        {% for tweet in results %}
+        <div class="col">
+            <div class="card shadow-lg h-100">
+                {% if tweet.photo %}
+                <img src="{{ tweet.photo.url }}" class="card-img-top" alt="Tweet Photo">
+                {% endif %}
+                <div class="card-body">
+                    <h5 class="card-title text-primary">{{ tweet.user.username }}</h5>
+                    <p class="card-text">{{ tweet.text|truncatechars:120 }}</p>
+                </div>
+                <div class="card-footer text-muted">
+                    Posted on: {{ tweet.created_at|date:"D, d M Y H:i" }}
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <div class="col-12 text-center">
+            <p class="text-muted">No tweets found matching your search.</p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

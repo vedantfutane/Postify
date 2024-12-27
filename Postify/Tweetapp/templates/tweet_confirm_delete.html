@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block title %}
+Postify
+{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1 class="text-center mb-4 text-danger">Are you sure you want to delete the selected post?</h1>
+
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <form method="post" class="border p-4 shadow-lg rounded bg-light">
+                {% csrf_token %}
+                <div class="d-flex justify-content-between">
+                    <button type="submit" class="btn btn-danger">
+                        Delete
+                    </button>
+                    <a href="{% url 'tweet_list' %}" class="btn btn-success">
+                        Cancel
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Postify
+{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <!-- Welcome Section -->
+    <div class="text-center mb-5">
+        <h1 class="fw-bold text-gradient">Welcome to Postify</h1>
+        <p class="lead">Your ultimate platform to share, explore, and connect through posts!</p>
+        <a class="btn btn-success btn-lg mt-3" href="{% url 'tweet_create' %}">
+            <i class="fas fa-plus-circle"></i> Create Post
+        </a>
+    </div>
+
+    <!-- Posts Section -->
+    <div class="container mt-4">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
+          {% for tweet in tweets %}
+          <div class="col">
+              <div class="card shadow-lg border-0 h-100">
+                  {% if tweet.photo %}
+                  <img src="{{ tweet.photo.url }}" class="card-img-top" alt="Post Image">
+                  {% endif %}
+                  <div class="card-body">
+                      <h5 class="card-title text-primary">{{ tweet.user.username }}</h5>
+                      <p class="card-text">{{ tweet.text|truncatechars:100 }}</p>
+                      {% if tweet.user == user %}
+                      <div class="d-flex justify-content-between mt-3">
+                          <a href="{% url 'tweet_edit' tweet.id %}" class="btn btn-primary btn-sm">
+                              <i class="fas fa-edit"></i> Edit
+                          </a>
+                          <a href="{% url 'tweet_delete' tweet.id %}" class="btn btn-danger btn-sm">
+                              <i class="fas fa-trash"></i> Delete
+                          </a>
+                      </div>
+                      {% endif %}
+                  </div>
+              </div>
+          </div>
+          {% endfor %}
+      </div>
+  </div>
+  
+</div>
+{% endblock %}
