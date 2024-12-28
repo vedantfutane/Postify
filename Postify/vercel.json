@@ -2,9 +2,8 @@
     "version": 2,
     "builds": [
       {
-        "src": "TweetLearn/wsgi.py",
-        "use": "@vercel/python",
-        "config": { "maxLambdaSize": "15mb" }
+        "src": "manage.py",
+        "use": "@vercel/python"
       },
       {
         "src": "static/**/*",
@@ -18,7 +17,7 @@
       },
       {
         "src": "/(.*)",
-        "dest": "TweetLearn/wsgi.py"
+        "dest": "manage.py"
       }
     ]
   }
