@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: tweetlearn-web
+    env: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn TweetLearn.wsgi:application"
+    envVars:
+      - key: DJANGO_SECRET_KEY
+        value: "django-insecure-xfy#9n#s1py9&4+ym&_0up8uehaj2i-_boy*4cjiu!@o%rf9q_"
+      - key: DEBUG
+        value: "False"
+      - key: ALLOWED_HOSTS
+        value: "postify.onrender.com"
+    plan: free
+
+  - type: static_site
+    name: tweetlearn-static
+    buildCommand: "python manage.py collectstatic --noinput"
+    plan: free
