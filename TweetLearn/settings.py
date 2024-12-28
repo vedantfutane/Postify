@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-xfy#9n#s1py9&4+ym&_0up8uehaj2i-_boy*4cjiu!@o%rf9q_
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG  = 'True'
 
-ALLOWED_HOSTS = ['.vercel.app', '.now.sh']
+ALLOWED_HOSTS = ['127.0.0.1', '.vercel.app']
 
 # Application definition
 
@@ -69,7 +69,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'TweetLearn.wsgi.application'
+WSGI_APPLICATION = 'TweetLearn.wsgi.app'
 
 
 # Database
@@ -119,7 +119,6 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build','build')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
