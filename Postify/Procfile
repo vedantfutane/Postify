@@ -1,1 +1,1 @@
-web: gunicorn TweetLearn.wsgi:application
+web: gunicorn TweetLearn.wsgi:app

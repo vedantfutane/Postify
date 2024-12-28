@@ -3,7 +3,7 @@ services:
     name: tweetlearn-web
     env: python
     buildCommand: "pip install -r requirements.txt"
-    startCommand: "gunicorn TweetLearn.wsgi:application"
+    startCommand: "gunicorn TweetLearn.wsgi:app"
     envVars:
       - key: DJANGO_SECRET_KEY
         value: "django-insecure-xfy#9n#s1py9&4+ym&_0up8uehaj2i-_boy*4cjiu!@o%rf9q_"
