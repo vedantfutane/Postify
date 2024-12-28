@@ -1,1 +1,0 @@
-web: gunicorn postify.TweetLearn.wsgi:application
