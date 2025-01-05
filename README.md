@@ -21,7 +21,7 @@
 
 --- ---
 
-![Screenshot_2](Postify\Screenshots\image-3.png)  ![Screenshot_3](Postify\Screenshots\image-2.png)    
+![Screenshot_2](.\Postify\Screenshots\image-3.png)  ![Screenshot_3](Postify\Screenshots\image-2.png)    
 ---
 
 ## Installation
