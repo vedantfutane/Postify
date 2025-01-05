@@ -17,11 +17,11 @@
 - **Dark Mode**: A sleek dark-themed interface for better usability.
 - **Image Handling**: Posts support image uploads with automatic resizing for consistent layouts.
 
-![Screenshot_1](Screenshots\image.png)
+![Screenshot_1](Postify\Screenshots\image.png)
 
 --- ---
 
-![Screenshot_2](Screenshots\image-3.png)  ![Screenshot_3](Screenshots\image-2.png)    
+![Screenshot_2](Postify\Screenshots\image-3.png)  ![Screenshot_3](Postify\Screenshots\image-2.png)    
 ---
 
 ## Installation
